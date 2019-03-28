@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   
   def create
-    user = User.new(
+    @user = User.new(
       name: params[:name],
       email: params[:email],
       username: params[:username],
@@ -15,4 +15,16 @@ class Api::UsersController < ApplicationController
       render json: {errors: user.errors.full_messages}, status: :bad_request
     end
   end
+
+  def show
+    @user = User.find(params[:id])
+    render 'show.json.jbuilder'
+  end
+
+  def index
+    @users = User.all
+    render 'index.json.jbuilder'
+  end
+
+
 end
