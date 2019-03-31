@@ -26,4 +26,20 @@ class Api::UsersController < ApplicationController
     render 'index.json.jbuilder'
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.name = params[:name] || @user.name
+    @user.email = params[:email] || @user.email
+    @user.username = params[:username] || @user.username
+    if params[:password]
+      @user.password = params[:password]
+      @user.password_confirmation = params[:password_confirmation]
+    end
+
+    if @user.save
+      render json: {message: 'User updated successfully.'}, status: :ok
+    else
+      render json: {errors: user.errors.full_messages}, status: :bad_request
+    end
+  end
 end
