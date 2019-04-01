@@ -15,5 +15,8 @@ Rails.application.routes.draw do
 
     post '/sessions' => 'sessions#create'
 
+    get '/titles/:id' => 'titles#show'
+    get '/titles' => 'titles#index'
+
   end
 end
