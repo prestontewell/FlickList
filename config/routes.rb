@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     get '/titles/:id' => 'titles#show'
     get '/titles' => 'titles#index'
 
+    get '/comments' => 'comments#index'
     post '/comments' => 'comments#create'
+    get '/comments/:id' => 'comments#show'
 
   end
 end
