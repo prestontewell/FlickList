@@ -2,9 +2,7 @@ class ListTitle < ApplicationRecord
   belongs_to :list
 
   def title
-
-    @title = HTTP.get("https://api.themoviedb.org/3/#{media_type}/#{title_id}?api_key=e264b0e591a1bc218e794423d31f4274&language=en-US)")
-    @title.parse
+    @title = HTTParty.get("https://api.themoviedb.org/3/#{media_type}/#{title_id}?api_key=#{ENV["API_KEY"]}&language=en-US)&append_to_response=credits%2c%20videos")
+    @title.body
   end
-
 end

@@ -22,5 +22,8 @@ Rails.application.routes.draw do
     post '/comments' => 'comments#create'
     get '/comments/:id' => 'comments#show'
 
+    get '/lists' => 'lists#index'
+    post '/lists' => 'lists#create'
+    delete '/lists/:id' => 'lists#destroy'
   end
 end

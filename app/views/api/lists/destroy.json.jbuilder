@@ -1,0 +1,1 @@
+json.message "The list has been deleted"

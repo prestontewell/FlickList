@@ -16,9 +16,4 @@ class Api::TitlesController < ApplicationController
 
 end
 
-# for title show need to determine media_type from selection to query the correct get request
-
-# title['results'][0]['media_type']
-
-# if media_type is movie, query movie (see above), if tv query  https://api.themoviedb.org/3/tv/1406?api_key=#{ENV["API_KEY"]}&language=en-US&append_to_response=cast%2Cmedia
 
