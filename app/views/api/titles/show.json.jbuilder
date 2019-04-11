@@ -1,1 +1,1 @@
-json.message "Hello"
+json.title @title
