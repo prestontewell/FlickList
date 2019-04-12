@@ -5,6 +5,11 @@ class Api::ListsController < ApplicationController
     render "index.json.jbuilder"
   end
 
+  def show
+    @list = List.find(params[:id])
+    render 'show.json.jbuilder'
+  end
+
   def create
     @list = List.new(
       name: params[:name]
