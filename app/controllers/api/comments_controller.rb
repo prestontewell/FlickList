@@ -18,9 +18,9 @@ class Api::CommentsController < ApplicationController
       list_id: params[:list_id],
     )
     @comment.save
-    render "show.json.jbuilder"
+    render 'show.json.jbuilder'
   end
+end
 
   
   
-end

@@ -26,5 +26,8 @@ Rails.application.routes.draw do
     post '/lists' => 'lists#create'
     get '/lists/:id' => 'lists#show'
     delete '/lists/:id' => 'lists#destroy'
+
+    get 'list_users' => 'list_users#index'
+    post '/list_users' => 'list_users#create'
   end
 end
