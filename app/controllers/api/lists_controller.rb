@@ -1,7 +1,7 @@
 class Api::ListsController < ApplicationController
 
   def index
-    @lists = List.all
+    @lists = current_user.lists
     render "index.json.jbuilder"
   end
 
