@@ -10,4 +10,9 @@ class Api::ListTitlesController < ApplicationController
     render 'show.json.jbuilder'
   end
 
+  def index
+    @list_titles = ListTitle.all
+    render 'index.json.jbuilder'
+  end
+
 end

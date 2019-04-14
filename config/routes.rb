@@ -29,5 +29,8 @@ Rails.application.routes.draw do
 
     get 'list_users' => 'list_users#index'
     post '/list_users' => 'list_users#create'
+
+    get 'list_titles' => 'list_titles#index'
+
   end
 end
