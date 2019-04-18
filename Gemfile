@@ -8,6 +8,8 @@ gem 'httparty'
 
 gem 'figaro'
 
+gem 'rack-cors'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
