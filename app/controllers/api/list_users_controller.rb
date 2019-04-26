@@ -3,7 +3,7 @@ class Api::ListUsersController < ApplicationController
   def create
     @list_user = ListUser.new(
       list_id: params[:list_id],
-      user_id: params[:user_id]
+      user_id: current_user.id
     )
     @list_user.save
     render 'show.json.jbuilder'

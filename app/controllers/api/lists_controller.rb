@@ -16,6 +16,12 @@ class Api::ListsController < ApplicationController
       name: params[:name]
     )
     @list.save
+    @list_user = ListUser.new(
+      list_id: @list.id,
+      user_id: current_user.id
+      )
+    p @list
+    @list_user.save
     render "show.json.jbuilder"
   end
 
